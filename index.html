@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monze Roastery | Artisanal Speciality Coffee</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo" id="homeBrandLink">
+        <span class="logo-text">Monze <span>Roastery</span></span>
+        <span class="logo-icon">☕</span>
+      </a>
+      <div class="nav-right-actions">
+        <button id="loginNavBtn" class="icon-btn" title="Login">
+          👤 <span class="login-label">Login</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN WEBSITE VIEWS CONTAINER -->
+  <div id="appViewsContainer">
+
+    <!-- HOME VIEW / LANDING -->
+    <section id="homeView" class="view-section active">
+      <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <span class="badge">Artisanal Speciality Coffee</span>
+          <h1>Roasted to Perfection, Brewed for You</h1>
+          <p>Discover hand-picked beans, small-batch roasts, and an unforgettable coffee experience at Monze Roastery.</p>
+          <div class="hero-buttons">
+            <button id="exploreMenuBtn" class="btn btn-primary">Explore Menu</button>
+            <button id="ourStoryBtn" class="btn btn-secondary">Our Story</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="featured-section">
+        <div class="container">
+          <div class="section-header text-center">
+            <h2>Featured Roasts</h2>
+            <p>Hand-crafted signature beverages picked by our head barista.</p>
+          </div>
+          <div class="featured-grid" id="featuredGrid"></div>
+        </div>
+      </section>
+
+      <section id="about" class="about-section">
+        <div class="container about-grid">
+          <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=800&q=80" alt="Coffee Brewing">
+            <div class="experience-card">
+              <span class="number">100%</span>
+              <span class="label">Arabica Beans</span>
+            </div>
+          </div>
+          <div class="about-content">
+            <span class="sub-title">Our Passion</span>
+            <h2>Welcome to Monze Roastery</h2>
+            <p>Founded on a commitment to quality and craft, Monze Roastery brings together ethically sourced beans from the world's finest coffee regions.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section">
+        <div class="container contact-grid">
+          <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <p>Have questions about our bean origins or bulk orders? Reach out to us anytime!</p>
+            <div class="info-list">
+              <div class="info-item">
+                <span class="info-icon">📍</span>
+                <div><strong>Location</strong><p>123 Roaster's Lane, Irosin, Sorsogon</p></div>
+              </div>
+              <div class="info-item">
+                <span class="info-icon">📞</span>
+                <div><strong>Phone Number</strong><p>+63 (912) 345-6789</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form-container">
+            <h3>Send us a Message</h3>
+            <form id="contactForm" class="contact-form" novalidate>
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="contactName" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="text" id="contactEmail" placeholder="your@email.com" required>
+              </div>
+              <div class="form-group">
+                <label>Message</label>
+                <textarea id="contactMsg" rows="3" placeholder="Write your message here..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- MENU FULL VIEW -->
+    <section id="menuView" class="view-section">
+      <div class="container sub-page-container">
+        <button class="btn btn-outline back-home-btn">← Back to Home</button>
+        <div class="section-header text-center" style="margin-top: 2rem;">
+          <h2>All Monze Roastery Menu Features</h2>
+          <p>Choose your favorite artisanal drinks, beans, and pastries.</p>
+        </div>
+        <div class="menu-filters" id="menuFilters">
+          <button class="filter-btn active" data-filter="all">All Items</button>
+          <button class="filter-btn" data-filter="hot">Hot Drinks</button>
+          <button class="filter-btn" data-filter="cold">Cold Drinks</button>
+          <button class="filter-btn" data-filter="beans">Whole Beans</button>
+          <button class="filter-btn" data-filter="pastry">Pastries</button>
+        </div>
+        <div class="menu-grid" id="fullMenuGrid"></div>
+      </div>
+    </section>
+
+    <!-- OUR STORY VIEW -->
+    <section id="storyView" class="view-section">
+      <div class="container sub-page-container">
+        <button class="btn btn-outline back-home-btn">← Back to Home</button>
+        <div class="story-content-wrapper">
+          <h2>The Story of Monze Roastery</h2>
+          <p class="story-lead">Born from a deep reverence for agriculture and small-batch roasting culture.</p>
+          <div class="video-container">
+            <video controls autoplay muted loop class="story-video">
+              <source src="video/17422066-hd_1080_1920_25fps.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="story-text-body">
+            <p>Monze Roastery started as a small local passion project in Irosin, Sorsogon, evolving into a haven for specialty coffee enthusiasts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGIN FORM VIEW -->
+    <section id="loginView" class="view-section">
+      <div class="auth-card-container">
+        <div class="auth-header">
+          <span class="logo-icon-large">☕</span>
+          <h2>Welcome to Monze Roastery</h2>
+          <p>Please enter your credentials to access your dashboard.</p>
+        </div>
+        <form id="loginForm" class="auth-form" novalidate>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="text" id="loginEmail" placeholder="" required>
+          </div>
+          <div class="form-group password-group">
+            <label>Password</label>
+            <div class="password-input-wrapper">
+              <input type="password" id="loginPassword" placeholder="••••••••" required>
+              <button type="button" id="togglePasswordBtn" class="eye-btn">👁️</button>
+            </div>
+          </div>
+          <div class="auth-links-row">
+            <a href="#" id="forgotPasswordLink">Forgot my password?</a>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Login</button>
+        </form>
+        <div class="auth-footer-text">
+          <p>Not yet an account? <button type="button" id="goToRegisterBtn" class="link-btn">Register Here</button></p>
+          <button class="btn btn-secondary btn-full back-home-btn" style="margin-top:1rem; color:var(--secondary); border-color:var(--border-color);">← Back to Home</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- REGISTRATION FORM VIEW -->
+    <section id="registerView" class="view-section">
+      <div class="auth-card-container wide-card">
+        <div class="auth-header">
+          <span class="logo-icon-large">☕</span>
+          <h2>Create Your Account</h2>
+          <p>Join Monze Roastery for exclusive perks and easy ordering.</p>
+        </div>
+        <form id="registerForm" class="auth-form grid-form" novalidate>
+          <div class="form-group">
+            <label>Full Name (Letters only, Auto-capitalized)</label>
+            <input type="text" id="regName" placeholder="Juan Dela Cruz" required>
+          </div>
+          <div class="form-group">
+            <label>Email Address (Must contain @)</label>
+            <input type="text" id="regEmail" placeholder="juan@example.com" required>
+          </div>
+          <div class="form-group password-group">
+            <label>Password (Min. 8 characters)</label>
+            <div class="password-input-wrapper">
+              <input type="password" id="regPass" required>
+              <button type="button" id="toggleRegPass" class="eye-btn">👁️</button>
+            </div>
+          </div>
+          <div class="form-group password-group">
+            <label>Confirm Password</label>
+            <div class="password-input-wrapper">
+              <input type="password" id="regPassConfirm" required>
+              <button type="button" id="toggleRegPassConfirm" class="eye-btn">👁️</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Phone Number (Strictly 11 digits)</label>
+            <input type="text" id="regPhone" placeholder="09123456789" required>
+          </div>
+          <div class="form-group">
+            <label>Coffee Preference</label>
+            <select id="regPref"><option value="espresso">Espresso</option><option value="latte">Latte</option><option value="coldbrew">Cold Brew</option><option value="beans">Whole Beans</option></select>
+          </div>
+          <div class="form-group">
+            <label>Roast Level</label>
+            <select id="regRoast"><option value="light">Light Roast</option><option value="medium">Medium Roast</option><option value="dark">Dark Roast</option></select>
+          </div>
+          <div class="form-group">
+            <label>City / Municipality (Filtered: Irosin Only)</label>
+            <input type="text" id="regCity" value="Irosin" readonly style="background-color: #f1ebd9; font-weight: bold;">
+          </div>
+          <div class="form-group">
+            <label>Barangay (28 Barangays of Irosin)</label>
+            <select id="regBarangay" required>
+              <option value="">-- Select Barangay --</option>
+              <option value="Bacolod">Bacolod</option>
+              <option value="Bagsangan">Bagsangan</option>
+              <option value="Batang">Batang</option>
+              <option value="Bolos">Bolos</option>
+              <option value="Buenavista">Buenavista</option>
+              <option value="Bulawan">Bulawan</option>
+              <option value="Carriedo">Carriedo</option>
+              <option value="Casini">Casini</option>
+              <option value="Cawayan">Cawayan</option>
+              <option value="Cogon">Cogon</option>
+              <option value="Gabao">Gabao</option>
+              <option value="Gulang-Gulang">Gulang-Gulang</option>
+              <option value="Gumapia">Gumapia</option>
+              <option value="Liang">Liang</option>
+              <option value="Macawayan">Macawayan</option>
+              <option value="Mapaso">Mapaso</option>
+              <option value="Monbon">Monbon</option>
+              <option value="Patag">Patag</option>
+              <option value="Salvacion">Salvacion</option>
+              <option value="San Agustin">San Agustin</option>
+              <option value="San Isidro">San Isidro</option>
+              <option value="San Juan">San Juan</option>
+              <option value="San Julian">San Julian</option>
+              <option value="San Pedro">San Pedro</option>
+              <option value="Santo Domingo">Santo Domingo</option>               
+              <option value="Tabon-Tabon">Tabon-Tabon</option>
+              <option value="Tinampo">Tinampo</option>
+              <option value="Tongdol">Tongdol</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Terms Agreement</label>
+            <select id="regTerms"><option value="yes">I Agree to Terms & Conditions</option><option value="no">Disagree</option></select>
+          </div>
+          <div class="form-actions-full">
+            <button type="submit" class="btn btn-primary btn-full">Register Account</button>
+            <button type="button" class="btn btn-outline btn-full back-to-login-btn" style="margin-top:0.5rem;">Already have an account? Login</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- USER DASHBOARD VIEW -->
+    <section id="userDashboardView" class="view-section">
+      <div class="dashboard-banner">
+        <div class="banner-content">
+          <h2>Welcome to Monze Roastery Dashboard</h2>
+          <p>Manage your profile and explore stock availability to order your favorite brews.</p>
+        </div>
+        <button id="userLogoutBtn" class="btn btn-logout">🚪 Logout</button>
+      </div>
+      <div class="container dashboard-container">
+        <div class="dashboard-card profile-card">
+          <h3>My Account Profile</h3>
+          <form id="editProfileForm" novalidate>
+            <div class="profile-pic-container">
+              <img id="userProfilePicPreview" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Profile">
+              <div>
+                <label style="font-size: 0.85rem; font-weight: 600;">Change Profile Picture</label>
+                <input type="file" id="editProfilePicFile" accept="image/*">
+                <input type="text" id="editProfilePicUrl" placeholder="Or paste Image URL" style="margin-top:0.3rem;">
+              </div>
+            </div>
+            <div class="form-group"><label>Full Name</label><input type="text" id="editUserName" required></div>
+            <div class="form-group"><label>Email</label><input type="text" id="editUserEmail" readonly></div>
+            <div class="form-group"><label>Phone Number</label><input type="text" id="editUserPhone" required></div>
+            <div class="form-group"><label>City</label><input type="text" id="editUserCity" value="Irosin" readonly style="background-color: #f1ebd9;"></div>
+            <button type="submit" class="btn btn-primary">Update Profile</button>
+          </form>
+        </div>
+
+        <div class="dashboard-card catalog-card">
+          <h3>Menu & Stock Availability</h3>
+          <div class="user-menu-grid" id="userMenuGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADMIN DASHBOARD VIEW -->
+    <section id="adminDashboardView" class="view-section">
+      <div class="dashboard-banner admin-banner">
+        <div class="banner-content">
+          <h2>Admin Management Dashboard</h2>
+          <p>Control menu items, review user orders, and inspect feedback inbox.</p>
+        </div>
+        <button id="adminLogoutBtn" class="btn btn-logout">🚪 Logout</button>
+      </div>
+      <div class="container dashboard-container">
+        <div class="dashboard-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+            <h3>Menu Manager Control</h3>
+            <button id="openAddProductModalBtn" class="btn btn-primary">+ Add Product</button>
+          </div>
+          <div class="admin-product-list" id="adminProductList"></div>
+        </div>
+
+        <div class="dashboard-card">
+          <h3>User Orders Manager</h3>
+          <div id="adminOrdersList" class="orders-list"></div>
+        </div>
+
+        <div class="dashboard-card">
+          <h3>User Message Inbox</h3>
+          <div id="adminInboxList" class="inbox-list"></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Add Product Modal -->
+  <div class="modal-backdrop" id="addProductModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Add New Coffee Product</h3>
+        <button class="close-btn" id="closeAddProductModal">&times;</button>
+      </div>
+      <form id="adminAddProductForm" class="modal-form" novalidate>
+        <div class="form-group">
+          <label>Product Name (Letters only allow)</label>
+          <input type="text" id="admTitle" placeholder="e.g. Caramel Macchiato" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Category</label>
+            <select id="admCategory">
+              <option value="hot">Hot Drink</option>
+              <option value="cold">Cold Drink</option>
+              <option value="beans">Whole Beans</option>
+              <option value="pastry">Pastry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Price (₱) (Numbers only)</label>
+            <input type="text" id="admPrice" placeholder="150.00" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Stock Quantity (Numbers only)</label>
+          <input type="text" id="admStock" placeholder="10" value="10" required>
+        </div>
+        <div class="form-group">
+          <label>Upload Image File (JPG/PNG)</label>
+          <input type="file" id="admImageFile" accept="image/*">
+        </div>
+        <div class="form-group">
+          <label>Or Image URL</label>
+          <input type="text" id="admImageUrl" placeholder="https://images.unsplash.com/...">
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea id="admDesc" placeholder="Brief description of product..." rows="3" required></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" id="cancelAddProductModal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Order Placement Modal -->
+  <div class="modal-backdrop" id="orderModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="orderModalTitle">Complete Your Order</h3>
+        <button class="close-btn" id="closeOrderModal">&times;</button>
+      </div>
+      <form id="placeOrderForm" class="modal-form" novalidate>
+        <input type="hidden" id="orderProductId">
+        <div class="form-group">
+          <label>Quantity (Numbers only)</label>
+          <input type="text" id="orderQty" value="1" required>
+        </div>
+        <div class="form-group">
+          <label>Delivery Address</label>
+          <input type="text" id="orderAddress" placeholder="Street, Barangay, Irosin" required>
+        </div>
+        <div class="form-group">
+          <label>Payment Method</label>
+          <select id="orderPayment">
+            <option value="Cash on Delivery">Cash on Delivery (COD)</option>
+            <option value="GCash">GCash</option>
+            <option value="Credit Card">Credit Card</option>
+          </select>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" id="cancelOrderModal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Place Order Now</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- CUSTOM ERROR MESSAGEBOX MODAL -->
+  <div class="modal-backdrop" id="customErrorModal">
+    <div class="modal-content error-modal-content" style="max-width: 400px; text-align: center; padding: 2.5rem 1.5rem; border-radius: 20px;">
+      <div style="width: 65px; height: 65px; background-color: #fdf3f2; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem auto;">
+        <span style="font-size: 1.8rem; color: #e74c3c;">⚠️</span>
+      </div>
+      <h3 style="font-size: 1.5rem; color: #191210; margin-bottom: 0.6rem; font-weight: 700;">Error!</h3>
+      <p id="customErrorMsg" style="color: #73635c; font-size: 0.95rem; margin-bottom: 1.8rem; line-height: 1.5;">Error! Invalid input: Please check your details.</p>
+      <button type="button" class="btn" id="closeCustomErrorBtn" style="background-color: #e74c3c; color: #fff; width: 100%; border-radius: 30px; font-weight: 700; padding: 0.8rem; font-size: 1rem; border: none; cursor: pointer;">OK</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 Monze Roastery. All rights reserved.</p>
+      <p>Artisanal Speciality Coffee Roasted to Perfection in Irosin, Sorsogon.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
